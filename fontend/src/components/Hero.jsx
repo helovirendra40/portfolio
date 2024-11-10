@@ -57,10 +57,8 @@ const Hero = () => {
                 <div className="heroButtons">
                     <a className="btn theme-btn-1" href="#contact">CONTACT ME <RiContactsFill /></a>
                     <button onClick={downloadPdf} className="btn theme-btn-2">GET RESUME
-                    <IoMdDownload /></button>
-        <Route path="/dashboard-experiences" element={<Experiences />} />
-        <Route path="/dashboard-experiences" element={<Experiences />} />
-                    <Link to={'/dashboard-skills'}>Add Skills</Link>
+                    <IoMdDownload /> vv</button>
+        <Link to={'/dashboard-skills'}>Add Skills</Link>
                 </div>
 
 

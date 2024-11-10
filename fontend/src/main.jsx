@@ -5,8 +5,9 @@ import App from './App.jsx'
 import Education from './components/dashboard/Educations.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Experiences from './components/dashboard/Experiences.jsx'
-import Skills from './components/dashboard/skills.jsx'
+// import Skills from './components/dashboard/skills.jsx'
 import Project from './components/dashboard/Project.jsx'
+import Skills from './components/dashboard/Skills.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

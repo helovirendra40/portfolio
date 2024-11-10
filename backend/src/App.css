@@ -1,0 +1,138 @@
+body{font-family: "Roboto Condensed", sans-serif !important;}
+:root{
+  --theme-bg: #7868e7;
+  --theme-color2: #16f2b3;
+  --pink: #ec4899;
+}
+.bg-theme{ background: var(--theme-bg);}
+.wrapper{width: 100%;}
+/* .HeroSection{ } */
+.bg-vector{padding: 100px 0px;background: url('./assets/images/hero.svg');  background-size: 100% 100%; }
+h1{ font-weight: 700 !important;
+  font-size: 42px !important;}
+.myName{ color: var(--pink);}
+.profileImage{ overflow: hidden; transition: all 0.1s; max-width: 400px; width: 100%; display: block; margin: 0px auto;
+  max-width: 400px;
+  border-radius: 50%;
+  padding: 5px 0px;
+  border: 2px solid #312e81;
+}
+.profileImage img{ transition: all 0.3s; width: calc(100% - 10px); display: block; margin: 0px auto; border-radius: 50%;}
+.myProfile{
+  color: #16f2b3;
+}
+.social{ display: flex; gap: 15px; list-style: none; padding-left: 0px;}
+.social a svg{transition: all 0.3s;  color: var(--pink); font-size: 35px;}
+/* .social a{} */
+.social svg:hover { color: #16f2b3;  transform: scale(1.2) rotate(360deg); font-size: 35px;}
+nav.navbar{ position: absolute; width: 100%;}
+nav.navbar a{ color: #fff;}
+.navbar-brand{ color: #16f2b3 !important; font-weight: 700; font-size: 30px !important;}
+.heroButtons{ display: flex; gap: 15px;}
+.theme-btn-1{ color: #fff !important; padding: 10px 25px !important; border-radius: 40px !important;  border: 1px solid #16f2b3 !important;}
+.theme-btn-2{  padding: 10px 25px !important; background-image: linear-gradient(to right, #eb489b, #df37ac, #cc2dc0, #ae2fd6, #7d3aec) !important; color: #fff !important; border-radius: 40px !important;}
+.theme-btn-1 svg, .theme-btn-2 svg{ transition: all 0.3s;}
+.theme-btn-1:hover svg, .theme-btn-2:hover svg{ margin-left: 8px;}
+.mainHeading{ color: #16f2b3; font-weight: 700; font-size: 20px; text-transform: uppercase;}
+
+.aboutImage{ border-radius: 8px; width: calc(100% - 250px); margin: 0px auto; display: block; filter: grayscale(1); transition: all 0.3s;}
+.aboutImage:hover{ filter: grayscale(0); transform: scale(1.04);}
+.AboutMeHeading{    position: absolute;
+  right: 0px;
+  transform: rotate(90deg);
+  transform: translate(11%, -50%) rotate(90deg);
+  top: 50%;
+  right: 0px;
+}
+.AboutMeHeading span{background: var(--theme-bg);
+  display: inline-block; border-radius: 5px;
+  padding: 10px 30px;     z-index: 9;}
+  .HeadingLine{width: 200px;
+    background: var(--theme-bg);
+    height: 2px;
+    position: absolute;
+    top: 42%;
+    z-index: -1;}
+
+    .AboutMeHeading1{    transform: translate(-50%, -50%) rotate(0deg) !important;
+      top: 50%;
+      left: 50%; right: unset !important;}
+      .HeadingLine1 {
+        width: 250px;
+        background: var(--theme-bg);
+        height: 2px;
+        position: absolute;
+        top: 49%;
+        z-index: -1;
+        left: -60px;
+    }
+  .vectorImg{ display: block;  width: 100%; margin: 0px auto;}
+.cardSec{ transition: all 0.1s; padding: 15px; border-radius: 10px; margin-bottom: 15px; border: 1.4px solid var(--theme-bg); position: relative;}
+.mt-6{ margin-top: 4rem;}
+.cardSec:hover{
+  box-shadow: 0px 0px 12px var(--theme-bg);
+}
+
+.cardHeading{ text-align: center; color: var(--theme-color2);}
+.cardSec svg{color: #8b5cf6; font-size: 40px;}
+.cardSec { color: #fff;}
+.cardSec h4{ font-size: 20px;}
+.cardSec h5{ font-size: 15px;}
+
+.cardBgVector{width: 100%;
+  position: absolute;
+  bottom: 0px;}
+  .skillCard { padding: 10px; border-radius: 6px; border: 1px solid var(--theme-bg); transition: all 0.3s;}
+  .skillCard:hover { border: 1px solid var(--theme-bg); transform: translateY(-3px); box-shadow: 0px 0px 12px var(--theme-bg);}
+  
+  .skillCard:hover p{ color: var(--theme-bg);}
+  .skillCard p{ color: #fff;}
+.skillImg{ height: 48px; width: 48px; display: block; margin: 0px auto;}
+
+.projectCardFooter {border-top: 1px solid var(--theme-bg);
+  margin-top: 12px;
+  padding: 12px 0px 0px 0px;}
+  .webLink svg{ color: #fff;}
+  .contactForm{ padding: 20px; border-radius: 10px; border: 1px solid #464c6a}
+  input, textarea{color: #fff !important; border: 1px solid #10172d !important; background: #10172d !important;}
+  .form-control:focus{ box-shadow: 0 0 0 1px var(--theme-color2) !important;}
+.contactDetails svg{ font-size: 30px; color: #fff;}
+.ContactSocial {display: flex;
+  gap: 15px;
+  list-style: none;
+  padding-left: 0px;}
+.ContactSocial svg{ transition: all 0.3s; font-size: 35px; color: #8b98a5;}
+.ContactSocial svg:hover{ transform: translateY(-3px); font-size: 35px; color: var(--theme-color2);}
+.ContactSocial li:nth-child(1) svg:hover, .ContactSocial li:nth-child(2) svg:hover, .ContactSocial li:nth-child(5) svg:hover{ box-shadow: 0px 0px 12px var(--theme-bg); border-radius: 50%;}
+
+.ContactSocial li:nth-child(3) svg:hover, .ContactSocial li:nth-child(4) svg:hover{ box-shadow: 0px 0px 12px var(--theme-bg); border-radius: unset !important;}
+.navbar-toggler{ color: var(--pink) !important;}
+.navbar-toggler svg{ font-size: 32px;}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show, .nav-link:focus, .nav-link:hover{ color: var(--pink) !important;}
+.profileImage:hover { box-shadow: 0px 0px 10px var(--theme-color2);}
+.profileImage:hover img { transform: scale(1.1);}
+
+@media (max-width:767px){
+  .HeroSection .row > div:first-child{ padding-top: 40px;}
+  .aboutImage {
+    border-radius: 8px;
+    width: calc(100% - 200px);
+    margin: 0px auto;}
+  .profileImage { margin-top: 60px;}
+  .vectorImg{ margin-bottom: 40px;}
+  .vectorImg1{ margin-bottom: 0px; margin-top: 40px;}
+  .aboutImage{ margin-top: 40px !important;}
+  #experience, .bg-vector{ padding-bottom: 30px; padding-top: 30px;}
+  #contact > div{ padding-top: 0px !important}
+  #contact > div > div:first-child{ padding-top: 0px !important}
+  #contact > div > div:last-child { padding-top: 50px !important}
+  h1{ font-size: 38px !important;}
+}
+@media (max-width:480px){
+  h1{ font-size: 30px !important;}
+  .aboutImage {
+    border-radius: 8px;
+    width: calc(100% - 100px);
+    margin: unset;}}
+nav.navbar{ position: fixed; z-index: 9; padding: 0px;}
+.scrolled{ background: #0d1224; box-shadow: 0px 0px 5px #ae2fd6;}

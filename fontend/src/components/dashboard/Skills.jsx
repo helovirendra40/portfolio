@@ -27,7 +27,7 @@ const Skills = () => {
 
     // Send the form data using the fetch API
     try {
-      const response = await fetch('http://localhost:5000/skill', {
+      const response = await fetch('https://iamveerendragangwar-portfolio-api.vercel.app/skill', {
         method: 'POST',
         body: formDataObj, // Send formData as body
       });

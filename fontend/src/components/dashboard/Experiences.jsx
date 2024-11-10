@@ -22,7 +22,7 @@ const Experiences = () => {
 
     // Send form data to API using fetch
     try {
-      const response = await fetch('http://localhost:5000/experience', {
+      const response = await fetch('https://iamveerendragangwar-portfolio-api.vercel.app/experience', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json' // Tell the server you're sending JSON data

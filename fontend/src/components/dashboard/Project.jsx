@@ -29,7 +29,7 @@ const Project = () => {
 
     // Send the form data using the fetch API
     try {
-      const response = await fetch('http://localhost:5000/project', {
+      const response = await fetch('https://iamveerendragangwar-portfolio-api.vercel.app/project', {
         method: 'POST',
         body: formDataObj, // Send formData as body
       });

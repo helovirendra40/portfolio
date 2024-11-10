@@ -13,8 +13,24 @@ const app = express();
 
 // Database connection
 connectDB();
+// List of allowed origins
+const allowedOrigins = [
+  'https://iamveerendragangwar.vercel.app',
+  'https://iamveerendragangwar-dashboard.vercel.app'
+];
+
+// Enable CORS and dynamically allow only the listed origins
 app.use(cors({
-  origin: 'https://iamveerendragangwar.vercel.app' // Allow only your frontend domain
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow the origin
+    } else {
+      callback(new Error('Not allowed by CORS')); // Block the origin
+    }
+  }
 }));
 app.use(express.json()); // Middleware to parse JSON
 

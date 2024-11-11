@@ -4,13 +4,35 @@ import { FaLaptopCode } from "react-icons/fa";
 import image from "../assets/images/img.png";
 import cardBgVector from "../assets/images/blur-23.svg";
 import EducationApi from "../Api/educationApi";
+import { useState } from "react";
+import { useEffect } from "react";
 const myStayl = {
   
     "maxWidth" : "300px",
     "width" : "50%"
   
 }
+
+
 const Educations = () => {
+  const [data, setData] = useState([]);
+  const fetchData = async ()=>{
+    try{
+  
+      const res = await fetch('https://iamveerendragangwar-portfolio-api.vercel.app/course')
+      const result = await res.json();
+      setData(result)
+    }
+    catch(error){
+      console.log(error)
+    }
+  }
+  
+
+  useEffect(()=>{
+    fetchData()
+  },[])
+  // console.log(data)
   return (
     <>
       <div className="position-relative bg-vector" id="education">
@@ -29,15 +51,15 @@ const Educations = () => {
               
 
               {
-                EducationApi.map((curElem, ind)=>{
+                data.map((curElem, ind)=>{
                   return(
                     <div className="cardSec" key={ind}>
-                    <p className="cardHeading">{curElem.eduction}</p>
+                    <p className="cardHeading">{curElem.course}</p>
                     <div className="d-flex align-items-center gap-4">
                       <FaLaptopCode />
                       <div>
                         <h4 className="mb-2">{curElem.university}</h4>
-                        <h5 className="mb-2">{curElem.years}</h5>
+                        <h5 className="mb-2">{curElem.year}</h5>
                       </div>
                     </div>
                     <img className="cardBgVector" src={cardBgVector} alt="img" />

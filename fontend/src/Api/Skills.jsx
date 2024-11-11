@@ -9,9 +9,6 @@ import tailwind from '../assets/images/skills/tailwind.png'
 import sass from '../assets/images/skills/sass.png'
 import php from '../assets/images/skills/php.png'
 import reactjs from '../assets/images/skills/react.png'
-import mongodb from '../assets/images/skills/mongodb.png'
-import nodejs from '../assets/images/skills/nodejs.png'
-import express from '../assets/images/skills/express.png'
 const SkillsData = [ {
     name: "HTML",
     image: html
@@ -56,19 +53,6 @@ const SkillsData = [ {
     name: "sass",
     image: sass
 },
-{
-    name: "MongoDB",
-    image: mongodb
-},
-{
-    name: "Express",
-    image: express
-},
-{
-    name: "Node Js",
-    image: nodejs
-},
-
 ]
 
 export default SkillsData

@@ -56,8 +56,7 @@ const Contact = () => {
                 <h2 className='mainHeading'>Contact with me</h2>
                 <div className='contactForm'>
                     <form onSubmit={handleSubmit} className='text-white'>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus nobis atque rerum cupiditate blanditiis sint cumque sed dolores ex similique.</p>
-
+                        
                         <div className="mb-3">
                             <label htmlFor="name" className="form-label">Name</label>
                             <input 

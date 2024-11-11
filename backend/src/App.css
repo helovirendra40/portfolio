@@ -136,3 +136,9 @@ nav.navbar a{ color: #fff;}
     margin: unset;}}
 nav.navbar{ position: fixed; z-index: 9; padding: 0px;}
 .scrolled{ background: #0d1224; box-shadow: 0px 0px 5px #ae2fd6;}
+
+.dashboardMenu{ background: #0d1224; height: 100%;}
+.dashboardMenu ul{ padding-left: 10px; padding-top: 50px;}
+.dashboardMenu ul li{ margin-bottom: 10px;}
+.dashboardMenu ul li a { display: block; padding: 4px; color: #fff; text-decoration: none;}
+.dashboardMenu ul li a:hover{ color: #16f2b3;}

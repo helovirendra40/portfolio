@@ -1,19 +1,17 @@
 import React, { useState } from 'react'
 
 const Project = () => {
-    // State to store form data
   const [formData, setFormData] = useState({
     title: '',
-    image: null,
-    link:""
+    image: '',
+    link: '' 
   });
 
-  // Handle input changes
+  // Handle form input changes
   const handleChange = (e) => {
-    const { name, value, files } = e.target; // Use 'files' for file input
     setFormData({
       ...formData,
-      [name]: files ? files[0] : value // If input is a file, store the first file
+      [e.target.name]: e.target.value
     });
   };
 
@@ -21,26 +19,27 @@ const Project = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent default form submission
 
-    // Create a FormData object to hold the form data
-    const formDataObj = new FormData();
-    formDataObj.append('title', formData.title); // Append the skill name
-    formDataObj.append('image', formData.image); // Append the image file
-    formDataObj.append('link', formData.link); // Append the image file
-
-    // Send the form data using the fetch API
+    // Send form data to API using fetch
     try {
       const response = await fetch('https://iamveerendragangwar-portfolio-api.vercel.app/project', {
         method: 'POST',
-        body: formDataObj, // Send formData as body
+        headers: {
+          'Content-Type': 'application/json' // Tell the server you're sending JSON data
+        },
+        body: JSON.stringify(formData) // Convert form data to JSON
       });
 
-      // Parse the response JSON
-      const result = await response.json();
-      console.log('Form submitted successfully:', result);
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Form submitted successfully:', data);
+      } else {
+        console.error('Form submission failed');
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
     }
   };
+
   return (
     <>
       <div className="container">
@@ -75,9 +74,10 @@ const Project = () => {
             <div className="mb-3">
               <label htmlFor="image" className="form-label">Image</label>
               <input 
-                type="file" 
+                type="text" 
                 className="form-control" 
                 name="image" 
+                value={formData.image} 
                 onChange={handleChange} 
                 id="image" 
                 required 

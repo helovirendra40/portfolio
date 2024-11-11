@@ -113,6 +113,7 @@ nav.navbar a{ color: #fff;}
 .profileImage:hover img { transform: scale(1.1);}
 
 @media (max-width:767px){
+  .navbar-nav{ background: #0d1224 !important; padding: 15px}
   .HeroSection .row > div:first-child{ padding-top: 40px;}
   .aboutImage {
     border-radius: 8px;

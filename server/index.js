@@ -1,5 +1,4 @@
 const express = require('express');
-const multer = require('multer');
 const cors = require('cors');
 const path = require('path');
 const PORT = 5000;
@@ -13,54 +12,8 @@ const app = express();
 
 // Database connection
 connectDB();
-// List of allowed origins
-const allowedOrigins = [
-  'https://iamveerendragangwar.vercel.app',
-  'https://iamveerendragangwar-dashboard.vercel.app'
-];
-
-// Enable CORS and dynamically allow only the listed origins
-app.use(cors({
-  origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true); // Allow the origin
-    } else {
-      callback(new Error('Not allowed by CORS')); // Block the origin
-    }
-  }
-}));
+app.use(cors());
 app.use(express.json()); // Middleware to parse JSON
-
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
-// Set up multer for file storage
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './uploads/');  // Set the destination folder for uploads
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + '-' + file.originalname);  // Save file with current timestamp to avoid name collisions
-  }
-});
-
-// File filter to only accept image files (jpeg, png, etc.)
-const fileFilter = (req, file, cb) => {
-  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
-    cb(null, true);
-  } else {
-    cb(new Error('Only .jpeg and .png files are accepted'), false);
-  }
-};
-
-// Initialize multer
-const upload = multer({
-  storage: storage,
-  limits: { fileSize: 1024 * 1024 * 5 },  // Limit file size to 5MB
-  fileFilter: fileFilter
-});
 
 
 
@@ -117,10 +70,10 @@ app.delete('/contact/:id', async (req, res) => {
 
 
 // add exp
-app.post('/skill', upload.single('image'), async (req, res) => {
+app.post('/skill', async (req, res) => {
   try {
-    const { title } = req.body;
-    const image = req.file ? req.file.path : null; 
+    const { title, image } = req.body;
+    
 
     const newSkill = new skill({
         title, 
@@ -167,10 +120,9 @@ app.delete('/skill/:id', async (req, res) => {
 
 
 // add exp
-app.post('/project', upload.single('image'), async (req, res) => {
+app.post('/project', async (req, res) => {
   try {
-    const { title , link } = req.body;
-    const image = req.file ? req.file.path : null; 
+    const { title , image, link } = req.body;
 
     const newProject = new project({
         title, 
